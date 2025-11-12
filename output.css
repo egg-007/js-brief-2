@@ -954,3 +954,11 @@
 .redcolor{
     background-color: red;
 }
+.bgtext{
+  background-color: #e7e5e5;
+}
+.btn{
+  color: #e7e5e5;
+  background-color: red;
+  border-color: #918a8a;
+}

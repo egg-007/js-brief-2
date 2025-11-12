@@ -80,7 +80,7 @@
     
     <!-- job & skills -->
     
-    <section id="myjob" class="bg-color">
+    <section id="myjob" class="bg-color hiddenn">
         <h2 class="text-2xl font-bold mx-4 my-2 bg-color">job & skills</h2>
         <form id="info card" class="border-2 rounded-4xl border-gray-400 p-4 m-1 w-full shadow-xl mb-6 bg-color-section">
             <div >
@@ -124,11 +124,15 @@
         <form id="info card" class="border-2 rounded-4xl border-gray-400 p-4 m-1 w-full shadow-xl bg-color-section">
             <div >
                 <div class="w-29/30">
-                    <label for="soft_skills" class="block mb-2 text-2xl font-bold text-gray-900 m-5">soft skills</label>
-                    <input type="text" id="soft_skills" placeholder=" Example: JavaScript, React, Python, Git, Docker" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                    <label for="soft_skill" class="block mb-2 text-2xl font-bold text-gray-900 m-5">soft skills</label>
+                    <input type="text" id="soft_skill" placeholder=" Example: JavaScript, React, Python, Git, Docker" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
                 </div>
-                <div id="soft_skills">
-                    <!-- TODO : show the soft_skills that add and remove  part for js-->
+                <!-- soft skills -->
+                <div id="soft_skills" class="px-16 flex justify-around flex-wrap">
+                    <div id="soft_skills_content" class="flex hiddenn">
+                        <p id="cpid" class="border-2 w-auto text-center bg-white text-blue-500 text-2xl">test</p>
+                        <button id="cbtn" class=" w-10 text-center redcolor text-white text-2xl">X</button>
+                    </div>
                 </div>
             </div>
             <h4 class="flex m-4 font-bold text-2xl">Language</h4>
@@ -166,7 +170,7 @@
 
     <!-- Education & experience -->
     
-    <section id="myschool" class="hiddenn">
+    <section id="myschool" class="">
         <h2 class="text-2xl font-bold mx-4 my-2">Education & experience</h2>
         <form id="info card" class="border-2 rounded-4xl border-gray-400 p-4 m-1 w-full shadow-xl bg-color-section">
             <h2 class="font-bold text-2xl m-4">Education</h2>
@@ -181,12 +185,20 @@
                         <input type="number" id="degree" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
                     </div>
                     <div >
-                        <label for="date" class="block mb-2 text-sm font-medium text-gray-900 m-5">Start & end dates</label>
-                        <input type="text" id="date" placeholder=" XX/XX/XXXX to XX/XX/XXXX " class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <label for="dateS" class="block mb-2 text-sm font-medium text-gray-900 m-5">Start dates</label>
+                        <input type="date" id="dateS" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                    </div>
+                    <div >
+                        <label for="dateN" class="block mb-2 text-sm font-medium text-gray-900 m-5">end dates</label>
+                        <input type="date" id="dateN" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
                     </div>
                 </div>
-                <div id="schoolpart">
-                    <!-- TODO : show the soft_skills that add and remove  part for js-->
+                <div class="flex justify-center m-4">
+                    <button id="savebtn" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl left-0">save</button>
+                </div>
+                <div id="schoolpart" class="hiddenn">
+                    <p id="schoolData" class="bgtext border-2 rounded-md m-4 p-2 w-3/4 text-center"></p>
+                    <button id="schoolDataBtn" class="text-lg btn rounded-md m-4 p-2 text-center">Cancel</button>
                 </div>
             </div>
             <h2 class="font-bold text-2xl m-4" >Experience</h2>
@@ -198,15 +210,23 @@
                     </div>
                     <div >
                         <label for="job" class="block mb-2 text-sm font-medium text-gray-900 m-5">Job title</label>
-                        <input type="number" id="job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <input type="text" id="job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
                     </div>
                     <div >
-                        <label for="date_of_job" class="block mb-2 text-sm font-medium text-gray-900 m-5">Start & end dates</label>
-                        <input type="text" id="date_of_job" placeholder=" XX/XX/XXXX to XX/XX/XXXX " class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <label for="dateS_job" class="block mb-2 text-sm font-medium text-gray-900 m-5">Start dates</label>
+                        <input type="date" id="dateS_job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                    </div>
+                    <div >
+                        <label for="dateN_job" class="block mb-2 text-sm font-medium text-gray-900 m-5">end dates</label>
+                        <input type="date" id="dateN_job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
                     </div>
                 </div>
-                <div id="jobpart">
-                    <!-- TODO : show the soft_skills that add and remove  part for js-->
+                <div class="flex justify-center m-4">
+                    <button id="savejobbtn" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl left-0">save</button>
+                </div>
+                <div id="jobpart" class="hiddenn">
+                    <p id="jobData" class="bgtext border-2 rounded-md m-4 p-2 w-3/4 text-center"></p>
+                    <button id="jobDataBtn" class="text-lg btn rounded-md m-4 p-2 text-center">Cancel</button>
                 </div>
             </div>
         </form>

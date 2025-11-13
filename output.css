@@ -962,3 +962,226 @@
   background-color: red;
   border-color: #918a8a;
 }
+
+/* =========================================
+   1. GLOBAL IMPORTS & SETUP
+   ========================================= */
+/* Import all fonts for both designs (Merriweather, Open Sans, Playfair Display, Lato) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Global Page Background */
+body {
+    background-color: #eef1f5; /* Light gray background for the whole page */
+    margin: 0;
+    padding: 40px 0;
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. DESIGN 1: CLASSIC (David Clark Style)
+   ========================================= */
+/* Variables for Design 1 */
+.resume-container {
+    --d1-font-serif: 'Merriweather', serif;
+    --d1-font-sans: 'Open Sans', sans-serif;
+    --d1-black: #1a1a1a;
+    --d1-gray: #555555;
+    --d1-dashed: 1px dashed #cccccc;
+    
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 60px auto; /* Added bottom margin to separate if you use both */
+    padding: 50px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    font-family: var(--d1-font-sans);
+    color: #333;
+}
+
+/* Header */
+.resume-container .resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.resume-container .header-left { flex: 1; padding-right: 20px; }
+
+.resume-container .header-name {
+    font-family: var(--d1-font-serif);
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: var(--d1-black);
+    margin: 0 0 5px 0;
+}
+
+.resume-container .header-role {
+    font-family: var(--d1-font-serif);
+    font-size: 18px;
+    color: var(--d1-gray);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.resume-container .header-photo {
+    width: 130px; height: 130px; object-fit: cover;
+    border-radius: 4px; background-color: #e0e0e0;
+    border: 1px solid #ccc;
+}
+
+/* Contact Info */
+.resume-container .contact-info {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    font-size: 13px; font-weight: 600;
+}
+.resume-container .contact-item { display: flex; align-items: center; gap: 8px; color: #333; }
+.resume-container .contact-item i { color: var(--d1-gray); width: 16px; text-align: center; }
+
+/* Sections & Titles */
+.resume-container .resume-section { margin-bottom: 30px; }
+.resume-container .section-title {
+    font-family: var(--d1-font-serif);
+    font-size: 18px; font-weight: 700; text-transform: uppercase;
+    border-bottom: 3px solid var(--d1-black);
+    padding-bottom: 5px; margin-bottom: 20px; color: var(--d1-black);
+}
+
+/* Skills */
+.resume-container .skills-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; font-size: 13px;
+}
+.resume-container .skill-item strong { display: block; color: #000; font-weight: 700; margin-bottom: 4px; }
+
+/* Jobs */
+.resume-container .job-entry {
+    margin-bottom: 20px; padding-bottom: 20px; border-bottom: var(--d1-dashed);
+}
+.resume-container .job-entry:last-child { border-bottom: none; }
+.resume-container .job-title-row {
+    font-family: var(--d1-font-serif); font-size: 16px; font-weight: 700;
+    color: var(--d1-black); display: flex; justify-content: space-between; align-items: center;
+}
+.resume-container .job-meta {
+    font-size: 12px; color: var(--d1-gray); font-weight: 600;
+    display: flex; gap: 15px; margin-top: 4px;
+}
+.resume-container ul { list-style: disc; margin-left: 20px; margin-top: 5px; }
+.resume-container li { font-size: 13px; margin-bottom: 5px; color: #444; }
+.resume-container .view-code-link { font-size: 12px; color: #2563eb; text-decoration: none; }
+
+
+/* =========================================
+   3. DESIGN 2: ELEGANT (Jamie Chastain Style)
+   ========================================= */
+/* Variables for Design 2 */
+.resume-container-2 {
+    --d2-font-header: 'Playfair Display', serif;
+    --d2-font-body: 'Lato', sans-serif;
+    --d2-text: #1a1a1a;
+    --d2-muted: #555555;
+
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 50px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    font-family: var(--d2-font-body);
+    color: var(--d2-text);
+}
+
+/* Header 2 */
+.resume-container-2 .top-header {
+    display: flex; justify-content: space-between; align-items: center; padding-bottom: 30px;
+}
+.resume-container-2 .main-name {
+    font-family: var(--d2-font-header); font-size: 50px; font-weight: 400;
+    text-transform: uppercase; letter-spacing: 4px; line-height: 1.1; margin: 0 0 15px 0;
+}
+.resume-container-2 .sub-role {
+    font-family: var(--d2-font-header); font-size: 14px; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--d2-text); margin: 0;
+}
+.resume-container-2 .profile-circle {
+    width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 1px solid #eee;
+}
+.resume-container-2 .header-line {
+    border: none; border-top: 1px solid #000; margin: 0 0 40px 0;
+}
+
+/* Layout 2 */
+.resume-container-2 .content-wrapper { display: flex; gap: 40px; }
+.resume-container-2 .sidebar {
+    width: 30%; padding-right: 30px; border-right: 1px solid #ddd;
+}
+.resume-container-2 .main-content { width: 70%; }
+
+/* Sidebar Items */
+.resume-container-2 .sidebar-title {
+    font-family: var(--d2-font-header); font-size: 16px; text-transform: uppercase;
+    letter-spacing: 2px; margin-bottom: 20px; margin-top: 0; font-weight: 700;
+}
+.resume-container-2 .contact-details p { font-size: 13px; margin-bottom: 10px; }
+.resume-container-2 .sidebar-list { list-style: none; padding: 0; margin: 0; }
+.resume-container-2 .sidebar-list li { font-size: 13px; margin-bottom: 12px; color: var(--d2-text); }
+.resume-container-2 .sidebar-divider {
+    border: none; border-top: 1px solid #000; width: 50px; margin: 30px 0;
+}
+
+/* Main Content Items */
+.resume-container-2 .section-heading {
+    font-family: var(--d2-font-header); font-size: 20px; text-transform: uppercase;
+    letter-spacing: 3px; margin-bottom: 25px; margin-top: 0; font-weight: 700;
+}
+.resume-container-2 .profile-text {
+    font-size: 14px; line-height: 1.8; color: #333; margin-bottom: 30px;
+}
+.resume-container-2 .main-divider {
+    border: none; border-top: 1px solid #ddd; margin: 40px 0;
+}
+
+/* Timeline Items */
+.resume-container-2 .timeline-item {
+    display: grid; grid-template-columns: 100px 1fr; gap: 20px; margin-bottom: 30px;
+}
+.resume-container-2 .timeline-date {
+    font-family: var(--d2-font-header); font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px; line-height: 1.6; color: #000;
+}
+.resume-container-2 .timeline-content h4 {
+    font-family: var(--d2-font-body); font-size: 16px; font-weight: 700; margin: 0 0 5px 0; color: #000;
+}
+.resume-container-2 .institution {
+    display: block; font-style: italic; font-size: 14px; color: var(--d2-muted);
+    margin-bottom: 10px; font-family: var(--d2-font-header);
+}
+.resume-container-2 .main-list { list-style: disc; margin-left: 15px; padding: 0; }
+.resume-container-2 .main-list li { font-size: 13px; margin-bottom: 6px; line-height: 1.5; color: #444; }
+
+/* Global Code snippet style */
+code {
+    background: #f0f0f0; padding: 2px 4px; border-radius: 2px;
+    font-family: monospace; color: #c7254e;
+}
+
+/* --- RESPONSIVE FOR BOTH --- */
+@media (max-width: 700px) {
+    .resume-container, .resume-container-2 { padding: 20px; width: 95%; }
+    
+    /* Design 1 Mobile */
+    .resume-container .resume-header { flex-direction: column-reverse; }
+    .resume-container .contact-info, .resume-container .skills-grid { grid-template-columns: 1fr; }
+    .resume-container .header-photo { margin-bottom: 20px; }
+
+    /* Design 2 Mobile */
+    .resume-container-2 .content-wrapper { flex-direction: column; }
+    .resume-container-2 .sidebar { width: 100%; border-right: none; border-bottom: 1px solid #ddd; padding-bottom: 30px; margin-bottom: 30px; }
+    .resume-container-2 .main-content { width: 100%; }
+    .resume-container-2 .top-header { flex-direction: column-reverse; text-align: center; gap: 20px; }
+    .resume-container-2 .timeline-item { grid-template-columns: 1fr; }
+}

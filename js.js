@@ -68,8 +68,10 @@ function nextPage(test) {
         pbar[currentIndex].classList.add('barcolor')
         if(currentIndex !== 0)
             document.getElementById('Previousbtn').classList.remove('btncolor');
-        if(currentIndex === 4)
+        if(currentIndex === 4){
             document.getElementById('nextbtn').classList.add('btncolor');
+            localStorage.setItem('Education', JSON.stringify(Education));
+        }
     } 
 }
 // for next previous page
@@ -302,5 +304,267 @@ n.addEventListener('click', (e) =>{
     e.preventDefault();
     console.log(Education)
 })
+/////////////////////////////////////////////
 
+function downloadPDF() {
+    const element = document.getElementById("pdf");
+
+    html2canvas(element).then(canvas => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
+
+        const width = pdf.internal.pageSize.getWidth();
+        const height = (canvas.height * width) / canvas.width;
+
+        pdf.addImage(imgData, "PNG", 0, 0, width, height);
+        pdf.save("myfile.pdf");
+    });
+}
+
+
+
+
+///////////////////////////////////////////////
+const img = document.getElementById('templet1')
+const img2 = document.getElementById('templet2')
+
+img.addEventListener('click', (e)=>{
+    e.preventDefault()
+    downloadPDF();
+    document.getElementById('header').classList.add("hiddenn")
+    document.getElementById('mydownload').classList.add("hiddenn")
+    document.getElementById('body').innerHTML = `
+    <div id="pdf" class="resume-container">
+    
+    <header class="resume-header">
+        <div class="header-left">
+            <h1 class="header-name">${Education.a_first_name} ${Education.a_last_name}</h1>
+            <div class="header-role">${Education.b_Job_title}</div>
+            
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone"></i>${Education.a_phone}</div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> ${Education.a_email}</div>
+                <div class="contact-item"><i class="fab fa-linkedin"></i>${Education.links}</div>
+            </div>
+        </div>
+        <img src="profile.jpg" alt="Profile Photo" class="header-photo">
+    </header>
+
+    <section class="resume-section">
+        <h2 class="section-title">Summary</h2>
+        <p>${Education.b_description}</p>
+    </section>
+
+    <section class="resume-section">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <strong>Arabic ${Education.Arabic},French ${Education.French}, English ${Education.English} </strong>
+                <span>${Education.hskills}</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="resume-section">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="job-entry">
+            <div class="job-header">
+                <div class="job-title-row">
+                    Dynamic Skills Tracker
+                    <a href="#" class="view-code-link"><i class="fab fa-github"></i> View Code</a>
+                </div>
+                <div class="job-meta">
+                    <span>Nov 2025 - Present</span>
+                    <span>Pure JavaScript, CSS</span>
+                </div>
+            </div>
+            <ul>
+                <li>Engineered a feature to dynamically add and remove HTML elements using <code>document.createElement</code> and <code>appendChild</code>.</li>
+                <li>Solved a complex bug where event listeners were not attaching to newly created elements by implementing <strong>Event Delegation</strong> on the parent container.</li>
+                <li>Utilized <code>e.preventDefault()</code> to handle form submissions seamlessly without page reloads.</li>
+                <li>Implemented input validation to prevent empty or duplicate skill entries.</li>
+            </ul>
+        </div>
+
+        <div class="job-entry">
+            <div class="job-header">
+                <div class="job-title-row">
+                    ${Education.b_Job_title} 
+                </div>
+                <div class="job-meta">
+                    <span>Nov 2025</span>
+                    <span>Creative Direction</span>
+                </div>
+            </div>
+            <ul>
+                <li>Led the creative direction for "L’Annonce Galactique," ensuring visual consistency with Sci-Fi/Cyberpunk themes.</li>
+                <li>Coordinated script requirements in multiple languages (French & Darija) to target specific audience demographics.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="resume-section">
+        <h2 class="section-title">Education</h2>
+        
+        <div class="job-entry" style="border-bottom: none;">
+            <div class="job-header">
+                <div class="job-title-row">Self-Taught Web Development</div>
+                <div class="job-meta">
+                    <span>2024 - Present</span>
+                </div>
+            </div>
+            <ul>
+                <li>Focus on JavaScript Algorithms, Data Structures, and DOM interaction.</li>
+                <li>Completed rigorous practical coding challenges and live coding sessions.</li>
+            </ul>
+            </div>
+            </section>
+            
+            </div>
+            <div class="flex justify-center m-4">
+                    <button id="download" onclick="downloadPDF()" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl">download</button>
+                </div>
+            `
+    })
+img2.addEventListener('click', (e)=>{
+    e.preventDefault()
+    document.getElementById('header').classList.add("hiddenn")
+    document.getElementById('mydownload').classList.add("hiddenn")
+    document.getElementById('body').innerHTML = `
+    <div class="resume-container-2">
+
+    <header class="top-header">
+        <div class="header-text">
+            <h1 class="main-name">YOUR <br> NAME</h1>
+            <h2 class="sub-role">FRONTEND DEVELOPER</h2>
+        </div>
+        <div class="header-image-wrapper">
+            <img src="profile.jpg" alt="Profile Photo" class="profile-circle">
+        </div>
+    </header>
+
+    <hr class="header-line">
+
+    <div class="content-wrapper">
+        
+        <aside class="sidebar">
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">CONTACT</h3>
+                <div class="contact-details">
+                    <p>123 Street Name, City</p>
+                    <p>+212 600 000 000</p>
+                    <p>email@example.com</p>
+                    <p>github.com/yourname</p>
+                </div>
+            </div>
+            
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">SKILLS</h3>
+                <ul class="sidebar-list">
+                    <li>JavaScript (ES6+)</li>
+                    <li>DOM Manipulation</li>
+                    <li>Event Delegation</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>Git & GitHub</li>
+                    <li>Debugging (DevTools)</li>
+                </ul>
+            </div>
+
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">INTERESTS</h3>
+                <ul class="sidebar-list">
+                    <li>Algorithmic Logic</li>
+                    <li>UI/UX Design</li>
+                    <li>Video Production</li>
+                    <li>Football Analytics</li>
+                </ul>
+            </div>
+
+        </aside>
+
+        <main class="main-content">
+            
+            <section class="main-section">
+                <h3 class="section-heading">PROFILE</h3>
+                <p class="profile-text">
+                    Dedicated Frontend Developer with a passion for building interactive web applications. specialized in <strong>JavaScript logic</strong> and DOM manipulation. Recently completed complex projects involving dynamic content generation and event handling without external frameworks. Eager to apply problem-solving skills in a professional environment.
+                </p>
+            </section>
+
+            <hr class="main-divider">
+
+            <section class="main-section">
+                <h3 class="section-heading">EDUCATION</h3>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        2024 <br> - <br> PRESENT
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Self-Taught Web Development</h4>
+                        <span class="institution">Online Curriculum / Personal Projects</span>
+                        <p>Focus on JavaScript core concepts, Data Structures, and Browser Rendering optimization.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        2020 <br> - <br> 2023
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Bachelor of Science</h4>
+                        <span class="institution">University of Morocco</span>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="main-divider">
+
+            <section class="main-section">
+                <h3 class="section-heading">PROJECT EXPERIENCE</h3>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        NOV 2025
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Dynamic Skills Tracker</h4>
+                        <span class="institution">Personal JavaScript Project</span>
+                        <ul class="main-list">
+                            <li>Built a responsive UI that allows users to add/remove skills dynamically using <code>document.createElement</code>.</li>
+                            <li>Implemented <strong>Event Delegation</strong> to handle clicks on dynamically generated buttons, improving performance.</li>
+                            <li>Solved complex DOM traversal issues to ensure the correct parent elements were deleted upon user interaction.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">
+                        NOV 2025
+                    </div>
+                    <div class="timeline-content">
+                        <h4>Marshal Prime Project</h4>
+                        <span class="institution">Multimedia Direction</span>
+                        <ul class="main-list">
+                            <li>Led the creative direction for "L’Annonce Galactique," coordinating scriptwriting in Darija and French.</li>
+                            <li>Managed visual assets to ensure consistency with the project's sci-fi theme.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</div>
+<div class="flex justify-center m-4">
+                    <button id="download" onclick="downloadPDF()" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl">download</button>
+                </div>
+    `
+})
 setupNextButton();

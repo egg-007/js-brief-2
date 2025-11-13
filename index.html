@@ -42,38 +42,58 @@
         <form id="info card" class="border-2 rounded-4xl border-gray-400 p-4 m-1 w-full shadow-xl bg-color-section">
             <h2 class="text-2xl font-bold mx-4 my-2">My Info</h2>
             <div class="flex flex-wrap justify-evenly">
-                <div >
-                    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 m-5">First name</label>
-                    <input type="text" id="first_name" placeholder=" John" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                <div>
+                    <div >
+                        <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 m-5">First name</label>
+                        <input type="text" id="first_name" placeholder=" John" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
+                    </div>
+                    <div >
+                        <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 m-5">Last name</label>
+                        <input type="text" id="last_name" placeholder=" Doe" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
+                    </div>
                 </div>
-                <div >
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900 m-5">Last name</label>
-                    <input type="text" id="last_name" placeholder=" Doe" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                <div>
+                    <div >
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 m-5">Email</label>
+                        <input type="email" id="email" placeholder=" john.doe@example.com" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
+                    </div>
+                    <div >
+                        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 m-5">Phone</label>
+                        <input type="text" id="phone" placeholder=" +212 600000000" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
+                    </div>
                 </div>
-                <div >
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 m-5">Email</label>
-                    <input type="email" id="email" placeholder=" john.doe@example.com" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                <div>
+                    <div >
+                        <label for="date" class="block mb-2 text-sm font-medium text-gray-900 m-5">date of birth</label>
+                        <input type="date" id="date" placeholder=" XX/XX/XXXX" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
+                    </div>
+                    <div >
+                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 m-5">address</label>
+                        <input type="text" id="address" placeholder=" address" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
+                    </div>
                 </div>
-                <div >
-                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 m-5">Phone</label>
-                    <input type="text" id="phone" placeholder=" +212 600000000" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                <div>
+                    <div >
+                        <label for="image" class="block mb-2 text-sm font-medium text-gray-900 m-5">IMAGE</label>
+                        <input type="file" id="image" placeholder=" +212 600000000" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
+                    </div>
+                    <div>
+                        <label for="links" class="block mb-2 text-sm font-medium text-gray-900 m-5">link</label>
+                        <input type="url" id="links" placeholder="https://www.linkedin.com/in/johndoe" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
+                        <div class="flex justify-around">
+                            <button id="linkbtn" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl left-0">add</button>
+                        </div>
+                    </div>
+                    <div id="linkss">
+                        <div id="lnk" class="hiddenn">
+                            <p id="lnktxt" class="bgtext border-2 rounded-md m-4 p-2 w-3/4 text-center"></p>
+                            <button id="Cancelbtn" class="text-lg btn rounded-md m-4 p-2 text-center">Cancel</button>
+                        </div>
+                    </div>
                 </div>
-                <div >
-                    <label for="date" class="block mb-2 text-sm font-medium text-gray-900 m-5">date of birth</label>
-                    <input type="date" id="first_name" placeholder=" XX/XX/XXXX" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
-                </div>
-                <div >
-                    <label for="address" class="block mb-2 text-sm font-medium text-gray-900 m-5">address</label>
-                    <input type="text" id="address" placeholder=" address" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
-                </div>
-                <div >
-                    <label for="links" class="block mb-2 text-sm font-medium text-gray-900 m-5">link</label>
-                    <input type="url" id="links" placeholder="https://www.linkedin.com/in/johndoe" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
-                </div>
-                 <div >
-                    <label for="image" class="block mb-2 text-sm font-medium text-gray-900 m-5">IMAGE</label>
-                    <input type="file" id="image" placeholder=" +212 600000000" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
-                </div>
+            </div>
+            <div class="flex justify-center m-4">
+                <button id="save1" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl left-0">save</button>
             </div>
         </form>
     </section>
@@ -85,7 +105,7 @@
         <form id="info card" class="border-2 rounded-4xl border-gray-400 p-4 m-1 w-full shadow-xl mb-6 bg-color-section">
             <div >
                 <label for="description" class="block mb-2 text-2xl font-bold text-gray-900 m-5">BIO</label>
-                <input type="text" id="description" placeholder="   Short description " class="border-2 border-b-neutral-600 rounded-3xl m-4 p-2 w-19/20 h-32"  />
+                <input type="text" id="description" placeholder="   Short description " class="border-2 border-b-neutral-600 rounded-3xl m-4 p-2 w-19/20 h-32" required />
             </div>
             <h2 class="text-2xl font-bold mx-4 my-2">Hard skills</h2>
             <div class="flex flex-wrap justify-evenly">
@@ -95,7 +115,7 @@
                 </div>
                 <div >
                     <label for="Position_sought" class="block mb-2 text-sm font-medium text-gray-900 m-5">Position sought</label>
-                    <input type="text" id="email" placeholder=" john.doe@example.com" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
+                    <input type="text" id="Position_sought" placeholder=" john.doe@example.com" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full"  />
                 </div>
                 <div >
                     <label for="Career_objectives" class="block mb-2 text-sm font-medium text-gray-900 m-5">Career Objectives (optional)</label>
@@ -113,6 +133,9 @@
                         <button id="btn" class=" w-10 text-center redcolor text-white text-2xl">X</button>
                     </div>
                 </div>
+            </div>
+            <div class="flex justify-center m-4">
+                    <button id="save2" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl left-0">save</button>
             </div>
         </form>
     </section>
@@ -165,12 +188,15 @@
                     </select>
                 </div>
             </div>
+            <div class="flex justify-center m-4">
+                    <button id="save3" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl left-0">save</button>
+            </div>
         </form>
     </section>
 
     <!-- Education & experience -->
     
-    <section id="myschool" class="">
+    <section id="myschool" class="hiddenn">
         <h2 class="text-2xl font-bold mx-4 my-2">Education & experience</h2>
         <form id="info card" class="border-2 rounded-4xl border-gray-400 p-4 m-1 w-full shadow-xl bg-color-section">
             <h2 class="font-bold text-2xl m-4">Education</h2>
@@ -178,27 +204,29 @@
                 <div class="flex flex-wrap justify-evenly">
                     <div >
                         <label for="school" class="block mb-2 text-sm font-medium text-gray-900 m-5">School / university name</label>
-                        <input type="text" id="school" placeholder=" ibn batota" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <input type="text" id="school" placeholder=" ibn batota" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" />
                     </div>
                     <div >
                         <label for="degree" class="block mb-2 text-sm font-medium text-gray-900 m-5">Degree / major (optional)</label>
-                        <input type="number" id="degree" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <input type="number" id="degree" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" />
                     </div>
                     <div >
                         <label for="dateS" class="block mb-2 text-sm font-medium text-gray-900 m-5">Start dates</label>
-                        <input type="date" id="dateS" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <input type="date" id="dateS" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" />
                     </div>
                     <div >
                         <label for="dateN" class="block mb-2 text-sm font-medium text-gray-900 m-5">end dates</label>
-                        <input type="date" id="dateN" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <input type="date" id="dateN" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" />
                     </div>
                 </div>
                 <div class="flex justify-center m-4">
                     <button id="savebtn" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl left-0">save</button>
                 </div>
-                <div id="schoolpart" class="hiddenn">
-                    <p id="schoolData" class="bgtext border-2 rounded-md m-4 p-2 w-3/4 text-center"></p>
-                    <button id="schoolDataBtn" class="text-lg btn rounded-md m-4 p-2 text-center">Cancel</button>
+                <div id="schoolp">
+                    <div id="schoolpart" class="hiddenn">
+                        <p id="schoolData" class="bgtext border-2 rounded-md m-4 p-2 w-3/4 text-center"></p>
+                        <button id="schoolDataBtn" class="text-lg btn rounded-md m-4 p-2 text-center">Cancel</button>
+                    </div>
                 </div>
             </div>
             <h2 class="font-bold text-2xl m-4" >Experience</h2>
@@ -206,28 +234,31 @@
                 <div class="flex flex-wrap justify-evenly">
                     <div >
                         <label for="company" class="block mb-2 text-sm font-medium text-gray-900 m-5">Company name</label>
-                        <input type="text" id="company" placeholder=" ibn batota" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <input type="text" id="company" placeholder=" ibn batota" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" />
                     </div>
                     <div >
                         <label for="job" class="block mb-2 text-sm font-medium text-gray-900 m-5">Job title</label>
-                        <input type="text" id="job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <input type="text" id="job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" />
                     </div>
                     <div >
                         <label for="dateS_job" class="block mb-2 text-sm font-medium text-gray-900 m-5">Start dates</label>
-                        <input type="date" id="dateS_job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <input type="date" id="dateS_job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" />
                     </div>
                     <div >
                         <label for="dateN_job" class="block mb-2 text-sm font-medium text-gray-900 m-5">end dates</label>
-                        <input type="date" id="dateN_job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" required />
+                        <input type="date" id="dateN_job" class="border-2 border-b-neutral-600 rounded-md m-4 p-2 w-full" />
                     </div>
                 </div>
                 <div class="flex justify-center m-4">
                     <button id="savejobbtn" class="border-2 px-4 py-2 rounded-2xl m-4 bg-blue-500 text-white text-2xl left-0">save</button>
                 </div>
-                <div id="jobpart" class="hiddenn">
-                    <p id="jobData" class="bgtext border-2 rounded-md m-4 p-2 w-3/4 text-center"></p>
-                    <button id="jobDataBtn" class="text-lg btn rounded-md m-4 p-2 text-center">Cancel</button>
+                <div id="jobp">
+                    <div id="jobpart" class="hiddenn">
+                        <p id="jobData" class="bgtext border-2 rounded-md m-4 p-2 w-3/4 text-center"></p>
+                        <button id="jobDataBtn" class="text-lg btn rounded-md m-4 p-2 text-center">Cancel</button>
+                    </div>
                 </div>
+
             </div>
         </form>
     </section>
